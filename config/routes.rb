@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+  
+
 
   resource :cart, only: [:show] do
     post   :add_item
@@ -18,6 +20,29 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
   end
 
+    get '/login' => 'sessions#new'
+    post '/login' => 'sessions#create'    
+    get '/logout' => 'sessions#destroy'
+    get '/signup' => 'users#new'
+    post '/users' => 'users#create'
+
+
+
+    class ApplicationController < ActionController::Base
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  helper_method :current_user
+
+  def authorize
+    redirect_to '/login' unless current_user
+  end
+
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
