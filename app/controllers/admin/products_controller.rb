@@ -5,6 +5,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def new
+    secret_pass = "gg"
     @product = Product.new
   end
 
