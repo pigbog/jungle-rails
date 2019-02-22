@@ -16,10 +16,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'dashboard#show'
-    resources :categories
     resources :products, except: [:edit, :update, :show]
   end
 
+<<<<<<< HEAD
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'    
     get '/logout' => 'sessions#destroy'
@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
 end
 
+=======
+>>>>>>> parent of 713eb38... Admin can now add categories.
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
