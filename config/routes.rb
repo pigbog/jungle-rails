@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'    
     get '/logout' => 'sessions#destroy'
@@ -44,6 +45,8 @@ Rails.application.routes.draw do
 
 end
 
+=======
+>>>>>>> parent of 713eb38... Admin can now add categories.
 =======
 >>>>>>> parent of 713eb38... Admin can now add categories.
   # The priority is based upon order of creation: first created -> highest priority.
