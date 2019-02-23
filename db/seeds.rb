@@ -131,6 +131,34 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+puts "Finding Products..."
 
+prod1 = Product.find_by! name: 'Red Bookshelf'
+prod2 = Product.find_by! name: 'Electric Chair'
+prod3 = Product.find_by! name: 'Optimal Sleeping Bed'
+
+prod1.reviews.create!({
+  user_id: 2,
+  description: 'Wow, what a crazy bookshelf for me and my family to put our bibles on.',
+  rating: 10
+})
+
+prod1.reviews.create!({
+  user_id: 3,
+  description: 'Simply not crazy enough.',
+  rating: 2
+})
+
+prod2.reviews.create!({
+  user_id: 2,
+  description: 'Bought this to electocute my dog, it didn\'t work',
+  rating: 1
+})
+
+prod3.reviews.create!({
+  user_id: 4,
+  description: 'Finally, a bed for the divorced gentleman.',
+  rating: 10
+})
 
 puts "DONE!"
