@@ -25,7 +25,7 @@
           <dt> </dt>
             <dd>
             <h4> User reviews: </h4>
-            <% @product.reviews.each do |review| %>
+            <% @product.reviews.reverse_each do |review| %>
             <dt><%= review.rating %>/5</dt>
             <dd>
             <%= review.description %>
