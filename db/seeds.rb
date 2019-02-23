@@ -158,7 +158,7 @@ prod2.reviews.create!({
 prod3.reviews.create!({
   user_id: 4,
   description: 'Finally, a bed for the divorced gentleman.',
-  rating: 10
+  rating: 5
 })
 
 puts "DONE!"
