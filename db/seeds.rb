@@ -140,7 +140,7 @@ prod3 = Product.find_by! name: 'Optimal Sleeping Bed'
 prod1.reviews.create!({
   user_id: 2,
   description: 'Wow, what a crazy bookshelf for me and my family to put our bibles on.',
-  rating: 10
+  rating: 5
 })
 
 prod1.reviews.create!({
