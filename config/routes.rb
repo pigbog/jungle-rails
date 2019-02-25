@@ -9,10 +9,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   
-  # resources :sessions, only: [:new, :create, :destroy]
-  # resources :users, only: [:new, :create]
+
   resources :products, only: [:index, :show] do
-    resources :reviews, only: [:create] 
+    resources :reviews, only: [:create, :destroy] 
 
   end
   resources :categories, only: [:show]

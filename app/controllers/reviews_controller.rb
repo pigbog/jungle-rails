@@ -12,6 +12,12 @@ class ReviewsController < ApplicationController
       render "products/show"
     end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    render "/products/show", notice: 'Review deleted!'
+  end
+
 end
 
 #     @category= Category.new(category_params)

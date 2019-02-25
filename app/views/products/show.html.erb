@@ -28,7 +28,12 @@
             <% @product.reviews.reverse_each do |review| %>
             <dt><%= review.rating %>/5</dt>
             <dd>
-            <%= review.description %>
+            <%= review.description %> 
+            <%if current_user && current_user.id == review.user_id%>
+            <%# <%= link_to fa_icon('trash'), :product_review, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>  %>
+            <%= link_to 'Delete', { :controller => 'product_review', :action => 'destroy', :id => review.id }, { :confirm => 'Are you sure?', :method => :delete, :remote => true} %>
+
+              <% end %>
             </dd>
             <% end %>
         </dl>
