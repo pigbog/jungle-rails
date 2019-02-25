@@ -5,8 +5,28 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
-  </div>
+    <h2><center>Thank you for your order!</center></h2>
+
+ <% @line_items.each do |item| %>
+
+
+        <dl class="dl-horizontal">
+          <%# <dt>Preview</dt> %>
+          <dd> <%= image_tag item.product.image.tiny %></dd>
+          <dt>Name</dt>
+          <dd><%= item.product.name %></dd>
+          <dt>Description</dt>
+          <dd><%= item.product.description %></dd>
+          <dt>Quantity</dt>
+          <dd><%= item.quantity %></dd>
+          <dt>Price</dt>
+          <dd><%= item.item_price%></dd>
+        </dl>
+
+       <% end %>
+
+       <h3> Your Total: <%= @order.total %></h3>
+</div>  
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 

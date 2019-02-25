@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for your order!</h1>
+ <% @order.line_items.each do |item| %>
+      You bought <%= item.quantity %>x <%=item.product.name %>
+      <% end %>
+    </p>
+    <p>Your total was: <%= @order.total %></p>
+  
+  </body>
+</html>
