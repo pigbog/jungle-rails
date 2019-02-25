@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    render "/products/show", notice: 'Review deleted!'
+    redirect_to products_path
   end
 
 end
